@@ -4,6 +4,7 @@ import {
   BASE_FEE,
   rpc,
   nativeToScVal,
+  scValToNative,
   Address,
   xdr,
 } from "@stellar/stellar-sdk";
@@ -91,5 +92,5 @@ export async function invokeContract(
     throw new Error(`Transaction did not succeed: ${getResult.status}`);
   }
 
-  return { txHash: sendResult.hash, result: getResult.returnValue };
+  return { txHash: sendResult.hash, result: getResult.returnValue ? scValToNative(getResult.returnValue) : null };
 }

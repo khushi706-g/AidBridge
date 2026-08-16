@@ -141,8 +141,8 @@ function CreateProgramForm({
   onClose: () => void;
   onCreated: (p: ProgramMeta) => void;
 }) {
+  const { publicKey } = useWallet();
   const [form, setForm] = useState({
-    onChainId: "",
     title: "",
     summary: "",
     region: "",
@@ -152,15 +152,52 @@ function CreateProgramForm({
   });
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [loadingText, setLoadingText] = useState<string | null>(null);
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
+    if (!publicKey) return setError("Wallet not connected");
     setLoading(true);
     setError(null);
     try {
+      setLoadingText("Creating on-chain (Sign 1 of 3)...");
+      const { result: rawId } = await invokeContract(
+        "create_program",
+        [
+          { type: "address", value: publicKey },
+          { type: "string", value: form.title },
+          { type: "address", value: "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC" },
+          { type: "i128", value: BigInt("100000000000") }, // 10k XLM
+          { type: "u64", value: Math.floor(Date.now() / 1000) - 3600 },
+          { type: "u64", value: Math.floor(Date.now() / 1000) + 30 * 24 * 3600 },
+          { type: "u32", value: 1 },
+        ],
+        publicKey
+      );
+      const progId = Number(rawId);
+
+      setLoadingText("Funding program (Sign 2 of 3)...");
+      await invokeContract(
+        "fund_program",
+        [
+          { type: "address", value: publicKey },
+          { type: "u64", value: progId },
+          { type: "i128", value: BigInt("100000000000") },
+        ],
+        publicKey
+      );
+
+      setLoadingText("Activating program (Sign 3 of 3)...");
+      await invokeContract(
+        "activate_program",
+        [{ type: "address", value: publicKey }, { type: "u64", value: progId }],
+        publicKey
+      );
+
+      setLoadingText("Saving metadata...");
       const created = await api.post<ProgramMeta>("/programs", {
         ...form,
-        onChainId: Number(form.onChainId),
+        onChainId: progId,
         eligibilityCriteria: [],
       });
       onCreated(created);
@@ -168,6 +205,7 @@ function CreateProgramForm({
       setError(err instanceof Error ? err.message : "Failed to register program");
     } finally {
       setLoading(false);
+      setLoadingText(null);
     }
   }
 
@@ -179,7 +217,6 @@ function CreateProgramForm({
         its on-chain ID and description here.
       </p>
       <form onSubmit={handleSubmit} className="create-form__grid">
-        <input placeholder="On-chain program ID" required value={form.onChainId} onChange={(e) => setForm({ ...form, onChainId: e.target.value })} />
         <input placeholder="Title" required value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} />
         <input placeholder="Region" required value={form.region} onChange={(e) => setForm({ ...form, region: e.target.value })} />
         <select value={form.disasterType} onChange={(e) => setForm({ ...form, disasterType: e.target.value })}>
@@ -199,7 +236,7 @@ function CreateProgramForm({
         {error ? <p className="org-auth__error">{error}</p> : null}
         <div className="create-form__actions">
           <Button type="button" variant="ghost" onClick={onClose}>Cancel</Button>
-          <Button type="submit" variant="signal" loading={loading}>Register program</Button>
+          <Button type="submit" variant="signal" loading={loading}>{loadingText || "Register program"}</Button>
         </div>
       </form>
     </Card>
