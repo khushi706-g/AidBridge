@@ -23,3 +23,6 @@ const walletInteractionSchema = new Schema(
 
 export type WalletInteraction = InferSchemaType<typeof walletInteractionSchema>;
 export const WalletInteractionModel = model("WalletInteraction", walletInteractionSchema);
+
+// Drop the unique index that was causing duplicate key errors on empty txHashes
+WalletInteractionModel.collection.dropIndex("txHash_1").catch(() => {});
