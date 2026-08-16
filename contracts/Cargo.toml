@@ -4,3 +4,10 @@ members = ["aid-distribution"]
 
 [workspace.package]
 edition = "2021"
+
+[profile.release]
+overflow-checks = true
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"

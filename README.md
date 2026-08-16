@@ -3,10 +3,10 @@
 AidBridge is a production-ready humanitarian aid distribution platform built on Stellar (Soroban). It lets organizations define an aid program's eligibility, per-person allocation, claim window, and claim limits as a smart contract—then fund it and let beneficiaries claim directly from their own Stellar wallets without intermediaries.
 
 ## 🔗 Live Demo & Links
-- **Live Platform**: `<insert-live-url>`
+- **Live Platform**: [https://aid-bridge-alpha.vercel.app/](https://aid-bridge-alpha.vercel.app/)
 - **Demo Video**: `<insert-demo-video-url>`
-- **Example Transaction Hash**: `<insert-tx-hash>`
-- **AidBridge Contract ID**: `<fill in after running docs/DEPLOYMENT.md>`
+- **Example Transaction Hash**: [`0ff1bb77f83c013494cacf63bd36d45c3dd599116ee8a6c42d6194d33c2ee0dc`](https://stellar.expert/explorer/testnet/tx/0ff1bb77f83c013494cacf63bd36d45c3dd599116ee8a6c42d6194d33c2ee0dc)
+- **AidBridge Contract ID**: `CDFUWKVSMDDLHQVECH6C7GLHJ2FFZJTNICDEUK4JMZI7MSHM2L332QIV`
 - **User Feedback Form**: `<insert-feedback-form-url>`
 - **User Feedback Responses**: `<insert-feedback-responses-url>`
 
