@@ -4,7 +4,7 @@ import { Button, WalletBadge } from "./ui";
 import "./Header.css";
 
 export function Header() {
-  const { connected, publicKey, connecting, connect, disconnect, error } = useWallet();
+  const { connected, publicKey, balance, connecting, connect, disconnect, error } = useWallet();
 
   return (
     <header className="site-header">
@@ -32,7 +32,12 @@ export function Header() {
 
         <div className="site-header__actions">
           {connected && publicKey ? (
-            <div className="site-header__wallet">
+            <div className="site-header__wallet" style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+              {balance && (
+                <span className="mono" style={{ fontSize: "0.875rem", color: "var(--color-signal)" }}>
+                  {Number(balance).toFixed(2)} XLM
+                </span>
+              )}
               <WalletBadge address={publicKey} />
               <Button variant="ghost" onClick={disconnect}>
                 Disconnect

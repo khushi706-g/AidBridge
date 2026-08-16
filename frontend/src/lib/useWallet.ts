@@ -5,6 +5,7 @@ import {
   getAddress,
   signTransaction,
 } from "@stellar/freighter-api";
+import { Horizon } from "@stellar/stellar-sdk";
 import { api } from "./api";
 
 interface WalletState {
@@ -23,12 +24,28 @@ export function useWallet() {
     connecting: false,
     error: null,
   });
+  const [balance, setBalance] = useState<string | null>(null);
+
+  const fetchBalance = useCallback(async () => {
+    if (!state.publicKey) return;
+    try {
+      const horizon = new Horizon.Server("https://horizon-testnet.stellar.org");
+      const acc = await horizon.loadAccount(state.publicKey);
+      const native = acc.balances.find((b) => b.asset_type === "native");
+      if (native) setBalance(native.balance);
+    } catch (e) {
+      console.error("Failed to fetch balance:", e);
+    }
+  }, [state.publicKey]);
 
   useEffect(() => {
     if (state.publicKey) {
       setState((s) => ({ ...s, connected: true }));
+      fetchBalance();
+      const interval = setInterval(fetchBalance, 10000);
+      return () => clearInterval(interval);
     }
-  }, [state.publicKey]);
+  }, [state.publicKey, fetchBalance]);
 
   const connect = useCallback(async () => {
     setState((s) => ({ ...s, connecting: true, error: null }));
@@ -64,5 +81,5 @@ export function useWallet() {
     setState({ connected: false, publicKey: null, connecting: false, error: null });
   }, []);
 
-  return { ...state, connect, disconnect, signTransaction };
+  return { ...state, balance, fetchBalance, connect, disconnect, signTransaction };
 }
