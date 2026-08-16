@@ -25,7 +25,7 @@ jobs:
         run: cargo test --workspace --verbose | tail -60
       - name: Build wasm
         working-directory: contracts
-        run: stellar contract build
+        run: cargo build --target wasm32-unknown-unknown --release
 
   backend:
     name: Backend — typecheck & lint
