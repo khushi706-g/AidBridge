@@ -25,10 +25,14 @@ export function OrgAuth() {
       if (!wallet) wallet = await connect();
 
       const path = mode === "signup" ? "/auth/signup" : "/auth/login";
-      const payload =
+      const payload: Record<string, any> =
         mode === "signup"
           ? { ...form, stellarPublicKey: wallet }
           : { email: form.email, password: form.password };
+
+      if (payload.website === "" || payload.website === "https://") {
+        delete payload.website;
+      }
 
       const session = await api.post<OrgSession>(path, payload);
       login(session);
