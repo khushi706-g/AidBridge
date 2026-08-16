@@ -20,10 +20,12 @@ jobs:
           workspaces: contracts
       - name: Run contract tests
         working-directory: contracts
-        run: cargo test --workspace
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: cargo test --workspace --verbose | tail -60
       - name: Build wasm
         working-directory: contracts
-        run: cargo build --target wasm32-unknown-unknown --release
+        run: stellar contract build
 
   backend:
     name: Backend — typecheck & lint
