@@ -1,0 +1,109 @@
+.hero {
+  padding: var(--space-9) 0 var(--space-8);
+  border-bottom: 1px solid var(--color-ink-line);
+  background:
+    radial-gradient(ellipse 900px 500px at 85% -10%, rgba(255, 90, 31, 0.14), transparent);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.hero__title {
+  font-size: clamp(34px, 4.6vw, 56px);
+  line-height: 1.06;
+  margin: var(--space-3) 0 var(--space-5);
+}
+
+.hero__title em {
+  font-style: normal;
+  color: var(--color-signal);
+}
+
+.hero__lede {
+  font-size: 17px;
+  color: var(--color-text-secondary);
+  max-width: 520px;
+  margin-bottom: var(--space-6);
+}
+
+.hero__actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.hero__packet {
+  display: flex;
+  justify-content: center;
+}
+
+.packet-svg {
+  width: 100%;
+  max-width: 340px;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+}
+
+.how {
+  padding: var(--space-9) 0 var(--space-8);
+}
+
+.how__title {
+  font-size: 28px;
+  margin: var(--space-2) 0 var(--space-6);
+}
+
+.how__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+.step-card {
+  border-top: 2px solid var(--color-signal);
+  padding-top: var(--space-4);
+}
+
+.step-card__index {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.step-card__title {
+  font-size: 18px;
+  margin: var(--space-2) 0 var(--space-2);
+}
+
+.step-card__body {
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+.principles {
+  padding-bottom: var(--space-9);
+}
+
+.principles__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+.principles__body {
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  margin-top: var(--space-2);
+}
+
+@media (max-width: 860px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+  }
+  .how__grid,
+  .principles__grid {
+    grid-template-columns: 1fr;
+  }
+}
