@@ -15,7 +15,7 @@ const walletInteractionSchema = new Schema(
       required: true,
     },
     programOnChainId: { type: Number },
-    txHash: { type: String, default: "" },
+    txHash: { type: String, default: () => Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) },
     userAgent: { type: String, default: "" },
   },
   { timestamps: true },
