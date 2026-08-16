@@ -1,0 +1,128 @@
+.dashboard {
+  padding: var(--space-8) var(--space-5) var(--space-9);
+}
+
+.dashboard__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-6);
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.dashboard__head h1 {
+  font-size: 28px;
+  margin-top: var(--space-1);
+}
+
+.dashboard__grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+}
+
+.dashboard__programs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.dashboard__program-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-ink-raised);
+  border: 1px solid var(--color-ink-line);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-text-primary);
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dashboard__program-item.is-active {
+  border-color: var(--color-signal);
+}
+
+.dashboard__beneficiaries {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.beneficiary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4);
+}
+
+.beneficiary-row__name {
+  font-weight: 600;
+}
+
+.beneficiary-row__wallet {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.dashboard__warning {
+  margin-top: var(--space-6);
+  font-size: 12px;
+  color: var(--color-warn);
+}
+
+.create-form {
+  margin-bottom: var(--space-6);
+}
+
+.create-form__hint {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin: var(--space-2) 0 var(--space-4);
+}
+
+.create-form__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.create-form__grid input,
+.create-form__grid select,
+.create-form__grid textarea {
+  background: var(--color-ink);
+  border: 1px solid var(--color-ink-line);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  color: var(--color-text-primary);
+  font-size: 14px;
+}
+
+.create-form__summary {
+  grid-column: 1 / -1;
+  min-height: 80px;
+  resize: vertical;
+  font-family: var(--font-body);
+}
+
+.create-form__actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+}
+
+@media (max-width: 860px) {
+  .dashboard__grid {
+    grid-template-columns: 1fr;
+  }
+  .create-form__grid {
+    grid-template-columns: 1fr;
+  }
+}

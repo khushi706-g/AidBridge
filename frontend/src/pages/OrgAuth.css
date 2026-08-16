@@ -1,0 +1,57 @@
+.org-auth {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-8) var(--space-5) var(--space-9);
+}
+
+.org-auth__card {
+  width: 100%;
+  max-width: 440px;
+}
+
+.org-auth__title {
+  font-size: 24px;
+  margin: var(--space-2) 0 var(--space-5);
+}
+
+.org-auth__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.org-auth__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.org-auth__field input {
+  background: var(--color-ink);
+  border: 1px solid var(--color-ink-line);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  color: var(--color-text-primary);
+  font-size: 14px;
+}
+
+.org-auth__wallet-note {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.org-auth__error {
+  color: var(--color-signal);
+  font-size: 13px;
+}
+
+.org-auth__toggle {
+  margin-top: var(--space-5);
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
