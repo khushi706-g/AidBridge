@@ -1,0 +1,59 @@
+:root {
+  /* ---- Color: "field relief" palette ---- */
+  --color-ink: #14181c;           /* primary dark surface */
+  --color-ink-raised: #1c2229;    /* elevated dark surface (cards) */
+  --color-ink-line: #2a3138;      /* hairline borders on dark */
+  --color-paper: #f7f5f0;         /* warm paper light surface */
+  --color-paper-raised: #ffffff;
+  --color-paper-line: #e2ddd1;
+
+  --color-signal: #ff5a1f;        /* signal orange — action, claim, alert */
+  --color-signal-dim: #c2440f;
+  --color-signal-tint: #ffe4d6;
+
+  --color-verified: #2e7d5b;      /* eligibility / settlement confirmed */
+  --color-verified-tint: #d9ecdf;
+
+  --color-manifest: #3b6e8f;      /* informational / ledger */
+  --color-manifest-tint: #dbe9f1;
+
+  --color-warn: #b8892b;
+  --color-warn-tint: #f5e6c8;
+
+  --color-text-primary: #eef0f2;
+  --color-text-secondary: #9aa4ad;
+  --color-text-on-paper: #1c2229;
+  --color-text-on-paper-secondary: #5c6570;
+
+  /* ---- Type ---- */
+  --font-display: "Space Grotesk", "Arial Narrow", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", Consolas, monospace;
+
+  /* ---- Spacing scale ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* ---- Radius: deliberately small — this system is about paper/manifest
+     materials, not soft app chrome ---- */
+  --radius-sm: 3px;
+  --radius-md: 6px;
+
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.28);
+  --shadow-signal: 0 4px 20px rgba(255, 90, 31, 0.35);
+
+  --max-width: 1180px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+  }
+}
