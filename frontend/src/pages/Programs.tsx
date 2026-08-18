@@ -8,6 +8,7 @@ import "./Programs.css";
 export function Programs() {
   const [programs, setPrograms] = useState<ProgramMeta[] | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [filter, setFilter] = useState<string>("all");
 
   useEffect(() => {
     api
@@ -36,8 +37,23 @@ export function Programs() {
         />
       ) : null}
 
+      <div style={{ marginBottom: "2rem", display: "flex", alignItems: "center" }}>
+        <label style={{ marginRight: "1rem", fontWeight: "bold", color: "var(--text)" }}>Filter by Category:</label>
+        <select value={filter} onChange={(e) => setFilter(e.target.value)} style={{ padding: "0.5rem", borderRadius: "4px", backgroundColor: "var(--surface)", color: "var(--text)", border: "1px solid var(--border)" }}>
+          <option value="all">All Categories</option>
+          <option value="flood">Flood</option>
+          <option value="drought">Drought</option>
+          <option value="earthquake">Earthquake</option>
+          <option value="conflict">Conflict</option>
+          <option value="epidemic">Epidemic</option>
+          <option value="cyclone">Cyclone</option>
+          <option value="mental_health">Mental Health</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
       <div className="programs-grid">
-        {programs?.map((p) => (
+        {programs?.filter(p => filter === "all" || p.disasterType === filter).map((p) => (
           <Link key={p._id} to={`/programs/${p.onChainId}`} className="programs-grid__link">
             <Card className="program-card">
               <div className="program-card__head">
