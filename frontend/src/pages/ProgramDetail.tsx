@@ -156,7 +156,16 @@ export function ProgramDetail() {
           {claimState === "success" && txHash ? (
             <div className="claim-card__result claim-card__result--success">
               <p className="eyebrow">Settled</p>
-              <p className="mono">{txHash}</p>
+              <p className="mono">
+                <a 
+                  href={`https://stellar.expert/explorer/testnet/tx/${txHash}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ color: "inherit", textDecoration: "underline" }}
+                >
+                  {txHash}
+                </a>
+              </p>
             </div>
           ) : null}
           {claimState === "error" && claimError ? (
