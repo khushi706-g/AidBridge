@@ -61,28 +61,28 @@ We successfully onboarded 12 real users with Stellar Testnet wallets and verifie
 ### Users Onboarded
 | User ID | Name | Email | Wallet Address | Feedback Summary |
 |---|---|---|---|---|
-| 1 | Anu Mehta | anukr12354@gmail.com | `GAC3LITATVVB32GXDQ3H57AKKPFW6U6IE27MGSH22OZK2DFWGTSKXY6W` | Typography makes scanning easy |
-| 2 | Smriti kumari | adhikarismriti994@gmail.com | `GATRLA4MGRVUN4AJRFV5XE5UK7BUDHKPAUK347J3NUDVEWSYYKAVK5E4` | Needs offline mode |
-| 3 | Sara Anaya | saranyasa999@gmail.com | `GBNK63IH2VXBQJW6CWIURQT47RLGILWRBPKGMBVMLPY53QXNII77KRCE` | Allow multiple photos |
-| 4 | Subheksh koma | komasubheeksh@gmail.com | `GAERKK5OALRTEIDQMOFB4PLER7MOFHHFVD6ZIHARG7ZWFFTUU2R4TH4B` | Add Dark Mode |
-| 5 | Shan Arav | shantanav7@gmail.com | `GCEPJ3IH5QWZKDTCJVR3IXZCSJXNTKBID77FFU53MFO2APZHEFTTW3ER` | Advanced filtering by date/category |
-| 6 | Simmi Tiwari | simmitiwari770@gmail.com | `GDQ3WNT6KR74PAC73CF4OBJHQ65CL4KSEK3FR3FPXFISBV72DRJ5Q7CY` | Add Mental Health category |
-| 7 | Eshan Mehra | enzobaby0099@gmail.com | `GBYU6CETKQVMDD2P37WD22AH64P56E2F3SOWKFJEC3YWJ4NWIPUUR3UA` | Export data as CSV/PDF |
-| 8 | Sohbham Patil | sohamrpatil4220@gmail.com | `GBBPU6DS5FNGXZXACJL3ZVI5MEF5LLH2YSSPCTHSZVPRVMZSI3OZ6JP6` | Monthly impact newsletter |
-| 9 | Jayant Vaibhav | jayantvaibhavspj@gmail.com | `GD5EBRJHLRGVPIYYP4AZP22YTKXM6G4EOT5SOX76CCBMOUPIBXUUO75Z` | Allow editing posts |
-| 10 | Ranjana Mehta | mehtaranjana745@gmail.com | `GBESM54CUIATAMWYYG5NJKIPTJWWO2TXJTDXBETYQ5AFL2YHOZ3XCVYH` | Multi-language support |
-| 11 | Himanshu Jha | jhahimanshu653@gmail.com | `GCEBVY27WJKU2JTO7WU3U53RUTQOMTPU7PC35ZFOBJ6RJEBUU3PCEYAH` | Delete account from settings |
-| 12 | Akash Mondal | 73akash58mondal@gmail.com | `GBGC3MISIJPO3SFLCYGQTINDLAD6CKDQRCDDRGIY5BWUWIVFHLPNB2KY` | Real-time push notifications |
+| 1 | Anu Mehta | anukr12354@gmail.com | `GAC3LITATVVB32GXDQ3H57AKKPFW6U6IE27MGSH22OZK2DFWGTSKXY6W` | The typography and font choice make scanning through long lists of requests very easy |
+| 2 | Smriti kumari | adhikarismriti994@gmail.com | `GATRLA4MGRVUN4AJRFV5XE5UK7BUDHKPAUK347J3NUDVEWSYYKAVK5E4` | the platform needs an 'Offline Mode'. Often, volunteers are in areas with poor cellular reception and need to view cached data |
+| 3 | Sara Anaya | saranyasa999@gmail.com | `GBNK63IH2VXBQJW6CWIURQT47RLGILWRBPKGMBVMLPY53QXNII77KRCE` | Brilliant idea and great execution. Please consider an update allowing us to attach multiple photos per program instead of being limited to just one |
+| 4 | Subheksh koma | komasubheeksh@gmail.com | `GAERKK5OALRTEIDQMOFB4PLER7MOFHHFVD6ZIHARG7ZWFFTUU2R4TH4B` | Please add a Dark Mode option. Browsing the app at night is currently a bit harsh on the eyes |
+| 5 | Shan Arav | shantanav7@gmail.com | `GCEPJ3IH5QWZKDTCJVR3IXZCSJXNTKBID77FFU53MFO2APZHEFTTW3ER` | we need a more advanced filtering system. Please let us sort requests by date posted and specific aid category simultaneously |
+| 6 | Simmi Tiwari | simmitiwari770@gmail.com | `GDQ3WNT6KR74PAC73CF4OBJHQ65CL4KSEK3FR3FPXFISBV72DRJ5Q7CY` | The current categories for aid are fine, but please add a dedicated 'Mental Health Support' category to the dropdown list |
+| 7 | Eshan Mehra | enzobaby0099@gmail.com | `GBYU6CETKQVMDD2P37WD22AH64P56E2F3SOWKFJEC3YWJ4NWIPUUR3UA` | Can you add a feature to export our organization's data and activity logs as a CSV or PDF report? It would help NGOs keep track of their efforts |
+| 8 | Sohbham Patil | sohamrpatil4220@gmail.com | `GBBPU6DS5FNGXZXACJL3ZVI5MEF5LLH2YSSPCTHSZVPRVMZSI3OZ6JP6` | Love the transparency of the organization. Can we get an opt-in monthly newsletter summarizing the platform's overall impact and statistics? |
+| 9 | Jayant Vaibhav | jayantvaibhavspj@gmail.com | `GD5EBRJHLRGVPIYYP4AZP22YTKXM6G4EOT5SOX76CCBMOUPIBXUUO75Z` | excellent platform overall. My only request is to allow us to edit the text of our programs or posts after we hit publish to fix typos |
+| 10 | Ranjana Mehta | mehtaranjana745@gmail.com | `GBESM54CUIATAMWYYG5NJKIPTJWWO2TXJTDXBETYQ5AFL2YHOZ3XCVYH` | I suggest the addition of multi-language support.Translating the interface into regional languages would help reach a wider community of beneficiaries |
+| 11 | Himanshu Jha | jhahimanshu653@gmail.com | `GCEBVY27WJKU2JTO7WU3U53RUTQOMTPU7PC35ZFOBJ6RJEBUU3PCEYAH` | It's a very solid app. My one improvement request is that you allow users to delete their own accounts and data directly from the settings menu without contacting support |
+| 12 | Akash Mondal | 73akash58mondal@gmail.com | `GBGC3MISIJPO3SFLCYGQTINDLAD6CKDQRCDDRGIY5BWUWIVFHLPNB2KY` | I find the system very reliable. My improvement request is to have real-time push notifications on mobile/browser instead of just relying on emails |
 
 ### Feedback Implementation
 We actively collected user feedback through Google Forms and implemented real feature requests directly into the production platform with unique Git commits.
 
 | User ID | Name | Email | Wallet Address | Feedback Summary | Improvement Made | Git Commit ID |
 |---|---|---|---|---|---|---|
-| 4 | Subheksh koma | komasubheeksh@gmail.com | `GAERKK5O...` | Add Dark Mode | Added Light/Dark mode toggle to UI | `e1ef2cf` |
-| 5 | Shan Arav | shantanav7@gmail.com | `GCEPJ3IH...` | Advanced filtering | Added category filtering to Programs page | `3ef9c0b` |
-| 6 | Simmi Tiwari | simmitiwari770@gmail.com | `GDQ3WNT6...` | Mental Health category | Added Mental Health option to dropdown | `34efab8` |
-| 7 | Eshan Mehra | enzobaby0099@gmail.com | `GBYU6CET...` | Export data as CSV | Built CSV export feature on Dashboard | `34efab8` |
+| 4 | Subheksh koma | komasubheeksh@gmail.com | `GAERKK5OALRTEIDQMOFB4PLER7MOFHHFVD6ZIHARG7ZWFFTUU2R4TH4B` | Please add a Dark Mode option. Browsing the app at night is currently a bit harsh on the eyes | Added Light/Dark mode toggle to UI | [`e1ef2cf`](https://github.com/khushi706-g/AidBridge/commit/e1ef2cf) |
+| 5 | Shan Arav | shantanav7@gmail.com | `GCEPJ3IH5QWZKDTCJVR3IXZCSJXNTKBID77FFU53MFO2APZHEFTTW3ER` | we need a more advanced filtering system. Please let us sort requests by date posted and specific aid category simultaneously | Added category filtering to Programs page | [`3ef9c0b`](https://github.com/khushi706-g/AidBridge/commit/3ef9c0b) |
+| 6 | Simmi Tiwari | simmitiwari770@gmail.com | `GDQ3WNT6KR74PAC73CF4OBJHQ65CL4KSEK3FR3FPXFISBV72DRJ5Q7CY` | The current categories for aid are fine, but please add a dedicated 'Mental Health Support' category to the dropdown list | Added Mental Health option to dropdown | [`34efab8`](https://github.com/khushi706-g/AidBridge/commit/34efab8) |
+| 7 | Eshan Mehra | enzobaby0099@gmail.com | `GBYU6CETKQVMDD2P37WD22AH64P56E2F3SOWKFJEC3YWJ4NWIPUUR3UA` | Can you add a feature to export our organization's data and activity logs as a CSV or PDF report? It would help NGOs keep track of their efforts | Built CSV export feature on Dashboard | [`34efab8`](https://github.com/khushi706-g/AidBridge/commit/34efab8) |
 
 ### On-Chain Verification
 | User ID | Name | Wallet Address | Transaction Link |
