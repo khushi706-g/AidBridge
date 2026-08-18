@@ -7,8 +7,8 @@ AidBridge is a production-ready humanitarian aid distribution platform built on 
 - **Demo Video**: `<insert-demo-video-url>`
 - **Example Transaction Hash**: [`0ff1bb77f83c013494cacf63bd36d45c3dd599116ee8a6c42d6194d33c2ee0dc`](https://stellar.expert/explorer/testnet/tx/0ff1bb77f83c013494cacf63bd36d45c3dd599116ee8a6c42d6194d33c2ee0dc)
 - **AidBridge Contract ID**: `CDFUWKVSMDDLHQVECH6C7GLHJ2FFZJTNICDEUK4JMZI7MSHM2L332QIV`
-- **User Feedback Form**: `<insert-feedback-form-url>`
-- **User Feedback Responses**: `<insert-feedback-responses-url>`
+- **Google Form Link**: [Feedback Form](<insert-form-url>)
+- **Response Sheet**: [Response Sheet Link](https://docs.google.com/spreadsheets/d/1R8P-mTQuQtmrKeNWBk_KYxu3ry68FnXGZxQA987kt4M/edit?usp=sharing)
 
 ## 🌟 Key Features
 
@@ -34,25 +34,15 @@ AidBridge is a production-ready humanitarian aid distribution platform built on 
 
 ---
 
-## 📸 Platform Gallery & Submission Checklist
+## 📸 Screenshots & Evidence
 
-As per the submission requirements, here is proof of the platform's implementation:
+| Institution Dashboard | Mobile Responsive View |
+|:---:|:---:|
+| <img src="images/product_ui.png" width="400" alt="Product UI"> | <img src="images/mobile_responsive.png" width="400" alt="Mobile Design"> |
 
-### 1. Mobile Responsive UI
-The platform gracefully adapts its interfaces for smaller screens, enabling seamless browsing and claims on mobile devices.
-<img src="images/mobile_UI.png" width="100%" alt="Mobile Responsive UI" />
-
-### 2. CI/CD Pipeline Running
-Our GitHub Actions workflow automatically compiles the code and runs tests on every push.
-<img src="images/CI_CD_PIPELINE.png" width="100%" alt="CI/CD Pipeline" />
-
-### 3. Test Output (Passing Tests)
-Extensive Rust tests validate the smart contract logic, testing the full lifecycle of a program from funding to beneficiary claims and withdrawals.
-<img src="images/test_output.png" width="100%" alt="Test Output" />
-
-### 4. Contract Interaction & Hash
-Proof of successful smart contract interaction logged on the Stellar network.
-<img src="images/CONTRACT_HASH.png" width="100%" alt="Contract Hash" />
+| Monitoring & Analytics |
+|:---:|
+| <img src="images/analytics.png" width="400" alt="Analytics"> |
 
 ## 👥 User Onboarding
 
