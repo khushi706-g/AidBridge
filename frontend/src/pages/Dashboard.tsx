@@ -62,9 +62,23 @@ export function Dashboard() {
           <p className="eyebrow">{session.org.name}</p>
           <h1>Organization dashboard</h1>
         </div>
-        <Button variant="signal" onClick={() => setShowCreate(true)}>
-          Register new program
-        </Button>
+        <div style={{ display: 'flex', gap: '1rem' }}>
+          <Button variant="outline" onClick={() => {
+            if (!programs) return;
+            const csv = ["ID,Title,Region,Category,Summary"];
+            programs.forEach(p => csv.push(`${p.onChainId},"${p.title}","${p.region}",${p.disasterType},"${p.summary}"`));
+            const blob = new Blob([csv.join("\n")], { type: 'text/csv' });
+            const a = document.createElement('a');
+            a.href = window.URL.createObjectURL(blob);
+            a.download = 'programs.csv';
+            a.click();
+          }}>
+            Export CSV
+          </Button>
+          <Button variant="signal" onClick={() => setShowCreate(true)}>
+            Register new program
+          </Button>
+        </div>
       </div>
 
       {showCreate ? (
@@ -220,7 +234,7 @@ function CreateProgramForm({
         <input placeholder="Title" required value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} />
         <input placeholder="Region" required value={form.region} onChange={(e) => setForm({ ...form, region: e.target.value })} />
         <select value={form.disasterType} onChange={(e) => setForm({ ...form, disasterType: e.target.value })}>
-          {["flood", "drought", "earthquake", "conflict", "epidemic", "cyclone", "other"].map((d) => (
+          {["flood", "drought", "earthquake", "conflict", "epidemic", "cyclone", "mental_health", "other"].map((d) => (
             <option key={d} value={d}>{d}</option>
           ))}
         </select>
