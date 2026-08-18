@@ -124,16 +124,9 @@ export function ProgramDetail() {
           </p>
 
           {!connected ? (
-            <div style={{ display: "flex", gap: "1rem", flexDirection: "column" }}>
-              <Button variant="signal" onClick={() => connect().catch(() => undefined)}>
-                Connect wallet to claim
-              </Button>
-              <div className="perf-divider" />
-              <p style={{ textAlign: "center", fontSize: "0.9rem" }}>Not registered yet?</p>
-              <Button variant="outline" onClick={() => window.location.href = `/programs/${program.onChainId}/register`}>
-                Register as Beneficiary
-              </Button>
-            </div>
+            <Button variant="signal" onClick={() => connect().catch(() => undefined)}>
+              Connect wallet to claim
+            </Button>
           ) : (
             <div className="claim-card__form">
               <label htmlFor="claim-amount" className="claim-card__label">
@@ -172,6 +165,14 @@ export function ProgramDetail() {
               <p>{claimError}</p>
             </div>
           ) : null}
+
+          <div className="perf-divider" style={{ margin: "1.5rem 0" }} />
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+            <p style={{ textAlign: "center", fontSize: "0.9rem", margin: 0 }}>Not registered yet?</p>
+            <Button variant="outline" onClick={() => window.location.href = `/programs/${program.onChainId}/register`}>
+              Register as Beneficiary
+            </Button>
+          </div>
         </Card>
       </div>
     </div>
