@@ -57,3 +57,16 @@
     color-scheme: light;
   }
 }
+
+:root.light {
+  --color-ink: #f7f5f0;
+  --color-ink-raised: #ffffff;
+  --color-ink-line: #e2ddd1;
+  --color-paper: #14181c;
+  --color-paper-raised: #1c2229;
+  --color-paper-line: #2a3138;
+  --color-text-primary: #1c2229;
+  --color-text-secondary: #5c6570;
+  --color-text-on-paper: #eef0f2;
+  --color-text-on-paper-secondary: #9aa4ad;
+}

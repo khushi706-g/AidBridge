@@ -1,10 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 import { useWallet } from "../lib/useWallet";
 import { Button, WalletBadge } from "./ui";
+import { useState, useEffect } from "react";
 import "./Header.css";
 
 export function Header() {
   const { connected, publicKey, balance, connecting, connect, disconnect, error } = useWallet();
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+
+  useEffect(() => {
+    document.documentElement.className = theme;
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   return (
     <header className="site-header">
@@ -31,6 +38,9 @@ export function Header() {
         </nav>
 
         <div className="site-header__actions">
+          <Button variant="ghost" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} style={{ marginRight: '1rem' }}>
+            {theme === 'dark' ? '☀ Light' : '☾ Dark'}
+          </Button>
           {connected && publicKey ? (
             <div className="site-header__wallet" style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
               {balance && (
