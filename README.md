@@ -5,7 +5,7 @@ AidBridge is a production-ready humanitarian aid distribution platform built on 
 ## 🔗 Live Demo & Links
 - **Live Platform**: [https://aid-bridge-alpha.vercel.app/](https://aid-bridge-alpha.vercel.app/)
 - **Demo Video**: [Watch Demo](https://drive.google.com/file/d/1OWTLXELlslvGTZEXgOTMRyAg0ryefx4L/view?usp=sharing)
-- **Pitch Deck / PPT**: `<insert-ppt-link>`
+- **Pitch Deck / PPT**: [View Presentation](https://docs.google.com/presentation/d/1FmIe4tNH5N6Cw61jMWxz24dGNtvUhxZk/edit?usp=sharing&ouid=114494973489055894068&rtpof=true&sd=true)
 - **Example Transaction Hash**: [`0ff1bb77f83c013494cacf63bd36d45c3dd599116ee8a6c42d6194d33c2ee0dc`](https://stellar.expert/explorer/testnet/tx/0ff1bb77f83c013494cacf63bd36d45c3dd599116ee8a6c42d6194d33c2ee0dc)
 - **AidBridge Contract ID**: `CDFUWKVSMDDLHQVECH6C7GLHJ2FFZJTNICDEUK4JMZI7MSHM2L332QIV`
 - **User Onboarding Data (50+ Users)**: [View Exported Excel/CSV Sheet Here](<insert-your-l5-sheet-link-here>)
