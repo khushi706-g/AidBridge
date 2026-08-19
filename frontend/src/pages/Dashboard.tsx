@@ -234,7 +234,7 @@ function CreateProgramForm({
         <input placeholder="Title" required value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} />
         <input placeholder="Region" required value={form.region} onChange={(e) => setForm({ ...form, region: e.target.value })} />
         <select value={form.disasterType} onChange={(e) => setForm({ ...form, disasterType: e.target.value })}>
-          {["flood", "drought", "earthquake", "conflict", "epidemic", "cyclone", "mental_health", "other"].map((d) => (
+          {["flood", "drought", "earthquake", "conflict", "epidemic", "cyclone", "mental_health", "healthcare", "other"].map((d) => (
             <option key={d} value={d}>{d}</option>
           ))}
         </select>
