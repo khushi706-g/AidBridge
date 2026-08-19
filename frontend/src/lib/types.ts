@@ -39,6 +39,7 @@ export interface ProgramMeta {
   contractAddress: string;
   txHash: string;
   createdAt: string;
+  claimEnd?: number;
 }
 
 export interface BeneficiaryRecord {
