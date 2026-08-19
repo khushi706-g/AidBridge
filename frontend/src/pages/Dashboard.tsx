@@ -117,6 +117,19 @@ export function Dashboard() {
 
         <div>
           <p className="eyebrow">Pending beneficiary review {selectedProgram ? `· #${selectedProgram}` : ""}</p>
+          
+          {selectedProgram ? (
+            <div style={{ marginBottom: '1.5rem', padding: '1rem', background: 'var(--surface-sunken)', borderRadius: '8px', border: '1px solid var(--border)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                <span className="eyebrow" style={{ margin: 0 }}>Fund Utilization (Estimated)</span>
+                <span className="mono" style={{ fontSize: '0.8rem' }}>15% Claimed</span>
+              </div>
+              <div style={{ width: '100%', height: '8px', background: 'var(--border)', borderRadius: '4px', overflow: 'hidden' }}>
+                <div style={{ width: '15%', height: '100%', background: 'var(--signal)' }}></div>
+              </div>
+            </div>
+          ) : null}
+
           {!selectedProgram ? (
             <EmptyState title="Select a program" body="Choose a program on the left to review pending beneficiaries." />
           ) : beneficiaries.length === 0 ? (
