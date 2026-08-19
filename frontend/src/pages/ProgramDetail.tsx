@@ -20,6 +20,8 @@ export function ProgramDetail() {
   const [txHash, setTxHash] = useState<string | null>(null);
   const [claimAmount, setClaimAmount] = useState("");
   const [showFiat, setShowFiat] = useState(false);
+  const [thankYouNote, setThankYouNote] = useState("");
+  const [showFAQ, setShowFAQ] = useState(false);
 
   useEffect(() => {
     if (!onChainId) return;
@@ -85,7 +87,13 @@ export function ProgramDetail() {
       <div className="detail-page__grid">
         <div>
           <p className="eyebrow">{program.disasterType} · {program.region}</p>
-          <h1 className="detail-page__title">{program.title}</h1>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
+            <h1 className="detail-page__title" style={{ margin: 0 }}>{program.title}</h1>
+            <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
+              <a href={`https://twitter.com/intent/tweet?text=Support the ${program.title} aid program!&url=${window.location.href}`} target="_blank" rel="noopener noreferrer" style={{ padding: '0.25rem 0.5rem', background: '#1DA1F2', color: 'white', borderRadius: '4px', textDecoration: 'none', fontSize: '0.8rem' }}>Share on Twitter</a>
+              <a href={`https://api.whatsapp.com/send?text=Support the ${program.title} aid program! ${window.location.href}`} target="_blank" rel="noopener noreferrer" style={{ padding: '0.25rem 0.5rem', background: '#25D366', color: 'white', borderRadius: '4px', textDecoration: 'none', fontSize: '0.8rem' }}>Share on WhatsApp</a>
+            </div>
+          </div>
           {orgName ? <p className="detail-page__org">Administered by {orgName}</p> : null}
           <p className="detail-page__summary">{program.summary}</p>
 
@@ -167,7 +175,7 @@ export function ProgramDetail() {
           {claimState === "success" && txHash ? (
             <div className="claim-card__result claim-card__result--success">
               <p className="eyebrow">Settled</p>
-              <p className="mono">
+              <p className="mono" style={{ marginBottom: '1rem' }}>
                 <a 
                   href={`https://stellar.expert/explorer/testnet/tx/${txHash}`} 
                   target="_blank" 
@@ -177,6 +185,16 @@ export function ProgramDetail() {
                   {txHash}
                 </a>
               </p>
+              <div style={{ marginTop: '1rem', borderTop: '1px solid var(--border)', paddingTop: '1rem' }}>
+                <p style={{ fontSize: '0.9rem', marginBottom: '0.5rem' }}>Leave a 'Thank You' note for the organization:</p>
+                <textarea 
+                  value={thankYouNote} 
+                  onChange={(e) => setThankYouNote(e.target.value)}
+                  placeholder="Thank you so much for this support..."
+                  style={{ width: '100%', padding: '0.5rem', borderRadius: '4px', border: '1px solid var(--border)', background: 'var(--surface)', color: 'var(--text)', marginBottom: '0.5rem', minHeight: '60px' }}
+                />
+                <Button variant="outline" onClick={() => { alert('Thank you note submitted!'); setThankYouNote(''); }}>Submit Note</Button>
+              </div>
             </div>
           ) : null}
           {claimState === "error" && claimError ? (
@@ -192,6 +210,20 @@ export function ProgramDetail() {
             <Button variant="outline" onClick={() => window.location.href = `/programs/${program.onChainId}/register`}>
               Register as Beneficiary
             </Button>
+          </div>
+
+          <div style={{ marginTop: '2rem' }}>
+            <button onClick={() => setShowFAQ(!showFAQ)} style={{ width: '100%', background: 'var(--surface)', border: '1px solid var(--border)', padding: '0.75rem', borderRadius: '8px', cursor: 'pointer', textAlign: 'left', fontWeight: 'bold', color: 'var(--text)', display: 'flex', justifyContent: 'space-between' }}>
+              <span>Help &amp; FAQ for First-time Users</span>
+              <span>{showFAQ ? '−' : '+'}</span>
+            </button>
+            {showFAQ && (
+              <div style={{ padding: '1rem', background: 'var(--surface-sunken)', border: '1px solid var(--border)', borderTop: 'none', borderRadius: '0 0 8px 8px', fontSize: '0.9rem', color: 'var(--text-muted)' }}>
+                <p><strong>What is a Stellar Wallet?</strong> A digital wallet (like Freighter) that lets you securely receive funds directly.</p>
+                <p><strong>How do I claim?</strong> Enter the amount you need (up to the limit) and click "Submit claim". You will be asked to sign the transaction.</p>
+                <p><strong>Are there fees?</strong> The Stellar network takes a fraction of a cent per transaction. Make sure you have a tiny bit of XLM for gas!</p>
+              </div>
+            )}
           </div>
         </Card>
       </div>
