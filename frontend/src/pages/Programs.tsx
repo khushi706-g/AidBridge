@@ -10,6 +10,7 @@ export function Programs() {
   const [error, setError] = useState<string | null>(null);
   const [filter, setFilter] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [sortBy, setSortBy] = useState<string>("newest");
 
   useEffect(() => {
     api
@@ -50,7 +51,15 @@ export function Programs() {
             <option value="epidemic">Epidemic</option>
             <option value="cyclone">Cyclone</option>
             <option value="mental_health">Mental Health</option>
+            <option value="healthcare">Healthcare</option>
             <option value="other">Other</option>
+          </select>
+        </div>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <label style={{ marginRight: "1rem", fontWeight: "bold", color: "var(--text)" }}>Sort by:</label>
+          <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} style={{ padding: "0.5rem", borderRadius: "4px", backgroundColor: "var(--surface)", color: "var(--text)", border: "1px solid var(--border)" }}>
+            <option value="newest">Newest First</option>
+            <option value="ending_soonest">Ending Soonest</option>
           </select>
         </div>
         <div style={{ display: "flex", alignItems: "center" }}>
@@ -69,6 +78,12 @@ export function Programs() {
         {programs
           ?.filter(p => filter === "all" || p.disasterType === filter)
           ?.filter(p => p.title.toLowerCase().includes(searchQuery.toLowerCase()) || p.summary.toLowerCase().includes(searchQuery.toLowerCase()) || p.region.toLowerCase().includes(searchQuery.toLowerCase()))
+          ?.sort((a, b) => {
+             if (sortBy === "ending_soonest") {
+               return (a.claimEnd || 0) - (b.claimEnd || 0); // Assuming claimEnd is available in Meta, fallback to 0
+             }
+             return 0; // Default order
+          })
           .map((p) => (
           <Link key={p._id} to={`/programs/${p.onChainId}`} className="programs-grid__link">
             <Card className="program-card">
