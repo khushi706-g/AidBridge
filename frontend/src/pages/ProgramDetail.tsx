@@ -19,6 +19,7 @@ export function ProgramDetail() {
   const [claimError, setClaimError] = useState<string | null>(null);
   const [txHash, setTxHash] = useState<string | null>(null);
   const [claimAmount, setClaimAmount] = useState("");
+  const [showFiat, setShowFiat] = useState(false);
 
   useEffect(() => {
     if (!onChainId) return;
@@ -129,9 +130,14 @@ export function ProgramDetail() {
             </Button>
           ) : (
             <div className="claim-card__form">
-              <label htmlFor="claim-amount" className="claim-card__label">
-                Amount to claim ({program.tokenSymbol})
-              </label>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                <label htmlFor="claim-amount" className="claim-card__label" style={{ margin: 0 }}>
+                  Amount to claim ({showFiat ? 'USD' : program.tokenSymbol})
+                </label>
+                <button type="button" onClick={() => setShowFiat(!showFiat)} style={{ fontSize: '0.8rem', background: 'none', border: 'none', color: 'var(--brand)', cursor: 'pointer', textDecoration: 'underline' }}>
+                  Show in {showFiat ? 'XLM' : 'Fiat'}
+                </button>
+              </div>
               <input
                 id="claim-amount"
                 type="number"
@@ -142,6 +148,11 @@ export function ProgramDetail() {
                 className="claim-card__input mono"
                 placeholder="0.00"
               />
+              {showFiat && claimAmount && (
+                <p style={{ fontSize: '0.85rem', color: 'var(--text)', marginTop: '0.5rem', marginBottom: '1rem', textAlign: 'right' }}>
+                  ≈ ${(Number(claimAmount) * 0.12).toFixed(2)} USD
+                </p>
+              )}
               <Button
                 variant="signal"
                 onClick={handleClaim}
