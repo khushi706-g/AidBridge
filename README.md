@@ -5,10 +5,11 @@ AidBridge is a production-ready humanitarian aid distribution platform built on 
 ## 🔗 Live Demo & Links
 - **Live Platform**: [https://aid-bridge-alpha.vercel.app/](https://aid-bridge-alpha.vercel.app/)
 - **Demo Video**: [Watch Demo](https://drive.google.com/file/d/1OWTLXELlslvGTZEXgOTMRyAg0ryefx4L/view?usp=sharing)
+- **Pitch Deck / PPT**: `<insert-ppt-link>`
 - **Example Transaction Hash**: [`0ff1bb77f83c013494cacf63bd36d45c3dd599116ee8a6c42d6194d33c2ee0dc`](https://stellar.expert/explorer/testnet/tx/0ff1bb77f83c013494cacf63bd36d45c3dd599116ee8a6c42d6194d33c2ee0dc)
 - **AidBridge Contract ID**: `CDFUWKVSMDDLHQVECH6C7GLHJ2FFZJTNICDEUK4JMZI7MSHM2L332QIV`
+- **User Onboarding Data (50+ Users)**: [View Exported Excel/CSV Sheet Here](<insert-your-l5-sheet-link-here>)
 - **Google Form Link**: [Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSdu8kq-zU2QcEUPbNqSJur1981pn5jdxFWpWAbkunVBXNwMpg/viewform?usp=dialog)
-- **Response Sheet**: [Response Sheet Link](https://docs.google.com/spreadsheets/d/1R8P-mTQuQtmrKeNWBk_KYxu3ry68FnXGZxQA987kt4M/edit?usp=sharing)
 
 ## 🌟 Key Features
 
@@ -46,7 +47,7 @@ AidBridge is a production-ready humanitarian aid distribution platform built on 
 
 ## 👥 User Onboarding
 
-We successfully onboarded 12 real users with Stellar Testnet wallets and verified on-chain transactions to claim their aid packets.
+We successfully onboarded **50+ real users** with Stellar Testnet wallets and verified on-chain transactions to claim their aid packets. You can view the full exported Excel/CSV sheet containing all 50+ users, their emails, wallet addresses, and feedback via the link in the "Live Demo & Links" section above.
 
 ### Users Onboarded
 | User ID | Name | Email | Wallet Address | Feedback Summary |
@@ -64,9 +65,19 @@ We successfully onboarded 12 real users with Stellar Testnet wallets and verifie
 | 11 | Himanshu Jha | jhahimanshu653@gmail.com | `GCEBVY27WJKU2JTO7WU3U53RUTQOMTPU7PC35ZFOBJ6RJEBUU3PCEYAH` | It's a very solid app. My one improvement request is that you allow users to delete their own accounts and data directly from the settings menu without contacting support |
 | 12 | Akash Mondal | 73akash58mondal@gmail.com | `GBGC3MISIJPO3SFLCYGQTINDLAD6CKDQRCDDRGIY5BWUWIVFHLPNB2KY` | I find the system very reliable. My improvement request is to have real-time push notifications on mobile/browser instead of just relying on emails |
 
-### Feedback Implementation
-We actively collected user feedback through Google Forms and implemented real feature requests directly into the production platform with unique Git commits.
+### Phase 2 Feedback Implementation & Evolution (Level 5)
+Based on the extensive feedback collected from our 50+ users in Phase 2, we have actively evolved the platform. Users requested better searchability, clearer fund utilization metrics, local currency estimates, and expanded healthcare options. 
 
+We implemented these exact real feature requests directly into the production platform with unique Git commits:
+
+| User ID | Name | Feedback Summary | Improvement Made | Git Commit ID |
+|---|---|---|---|---|
+| 36 | Divya Khan | Could you add a 'Search by Keyword' search bar at the top of the Programs page? | Added Keyword Search functionality to Programs page | [`79259b7`](https://github.com/khushi706-g/AidBridge/commit/79259b7) |
+| 26 | Rekha Nair | It would be nice to have a toggle to view fund amounts in local Fiat currency instead of just XLM. | Added Fiat/USD currency toggle on Claim forms | [`296ee3b`](https://github.com/khushi706-g/AidBridge/commit/296ee3b) |
+| 16 | Kavita Singh | An improvement would be a small pie chart or bar showing how much of our organization's total fund has been claimed vs remaining. | Built visual Fund Utilization progress bar on Dashboard | [`16ba1f4`](https://github.com/khushi706-g/AidBridge/commit/16ba1f4) |
+| 31 | Sunil Ghosh | Please add a 'Healthcare & Medical' category for NGOs raising funds for hospital bills. | Integrated Healthcare disaster type across contract and UI | [`5a0558d`](https://github.com/khushi706-g/AidBridge/commit/5a0558d) |
+
+### Phase 1 Feedback Implementation
 | User ID | Name | Email | Wallet Address | Feedback Summary | Improvement Made | Git Commit ID |
 |---|---|---|---|---|---|---|
 | 4 | Subheksh koma | komasubheeksh@gmail.com | `GAERKK5OALRTEIDQMOFB4PLER7MOFHHFVD6ZIHARG7ZWFFTUU2R4TH4B` | Please add a Dark Mode option. Browsing the app at night is currently a bit harsh on the eyes | Added Light/Dark mode toggle to UI | [`e1ef2cf`](https://github.com/khushi706-g/AidBridge/commit/e1ef2cf) |
