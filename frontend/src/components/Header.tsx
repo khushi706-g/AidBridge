@@ -7,11 +7,13 @@ import "./Header.css";
 export function Header() {
   const { connected, publicKey, balance, connecting, connect, disconnect, error } = useWallet();
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+  const [highContrast, setHighContrast] = useState(localStorage.getItem('highContrast') === 'true');
 
   useEffect(() => {
-    document.documentElement.className = theme;
+    document.documentElement.className = `${theme} ${highContrast ? 'high-contrast' : ''}`.trim();
     localStorage.setItem('theme', theme);
-  }, [theme]);
+    localStorage.setItem('highContrast', String(highContrast));
+  }, [theme, highContrast]);
 
   return (
     <header className="site-header">
@@ -38,6 +40,9 @@ export function Header() {
         </nav>
 
         <div className="site-header__actions">
+          <Button variant="ghost" onClick={() => setHighContrast(!highContrast)} style={{ marginRight: '0.5rem', fontSize: '0.8rem' }}>
+            {highContrast ? 'Standard' : 'High Contrast'}
+          </Button>
           <Button variant="ghost" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} style={{ marginRight: '1rem' }}>
             {theme === 'dark' ? '☀ Light' : '☾ Dark'}
           </Button>
